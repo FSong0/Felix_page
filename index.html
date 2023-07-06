@@ -9,6 +9,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-K9DK3CG');</script>
         <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+	<title>简单的点赞</title>
 </head>
 
 <body>
@@ -70,6 +72,28 @@ CBD, city of Hobart<br>
 TAS 7004
 </address>
 </p>
+	<div><button onclick="clickCounter()" type="button">点一点</button></div>
+        <div id="result"></div>
+ 
+        <script>
+ 
+ 
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "你点了第 " + localStorage.clickcount + " 次。";
+    } 
+    else {
+        document.getElementById("result").innerHTML = "浏览器不支持";
+    }
+}
+ 
+ 
+       </script>
 	<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9DK3CG"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
